@@ -95,11 +95,7 @@ app.post('/recursos', (req, res) => {
   );
 });
 
-app.get('/seed', (req, res) => {
-  db.run("INSERT INTO usuarios (email, senha, tipo) VALUES ('admin@wayne.com', '123', 'admin')");
-  db.run("INSERT INTO usuarios (email, senha, tipo) VALUES ('operador@wayne.com', '123', 'operador')");
-  res.send("Usuários criados");
-});
+
 
 
 const PORT = process.env.PORT || 3000;

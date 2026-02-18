@@ -95,6 +95,17 @@ app.post('/recursos', (req, res) => {
   );
 });
 
+app.delete('/recursos/:id', (req, res) => {
+  const id = req.params.id;
+
+  db.run("DELETE FROM recursos WHERE id = ?", [id], function(err) {
+    if (err) {
+      res.status(500).json({ erro: err.message });
+    } else {
+      res.json({ sucesso: true });
+    }
+  });
+});
 
 
 
